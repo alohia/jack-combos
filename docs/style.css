@@ -1,14 +1,19 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
   font-size: 20px;
   margin: 0;
   padding: 0;
+  background: #f7f7f7;
+  color: #333;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
 }
 
@@ -23,16 +28,33 @@ select, button {
   font-size: 18px;
   padding: 10px;
   margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #number-selects label {
-  margin-top: 10px;
+  margin-top: 15px;
   display: block;
 }
 
-pre {
-  text-align: left;
-  white-space: pre-wrap;
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
   font-size: 18px;
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.results-table th {
+  background-color: #eaeaea;
+  font-weight: bold;
 }
