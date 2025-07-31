@@ -13,4 +13,4 @@ Enable GitHub Pages in the repository settings and select the `docs/` directory 
 ```
 https://<username>.github.io/jack-combos/
 ```
-Replace `<username>` with your GitHub user name.
+Replace `<username>` with your GitHub user name and go.
