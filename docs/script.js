@@ -1,7 +1,7 @@
 const comboSizeSelect = document.getElementById('comboSize');
 const selectsContainer = document.getElementById('number-selects');
 const goButton = document.getElementById('goButton');
-const resultsPre = document.getElementById('results');
+const resultsTable = document.getElementById('resultsTable');
 const MAX_NUMBER = 35;
 
 // populate first dropdown
@@ -15,7 +15,7 @@ for (let i = 7; i <= MAX_NUMBER; i++) {
 comboSizeSelect.addEventListener('change', () => {
   const count = parseInt(comboSizeSelect.value, 10);
   selectsContainer.innerHTML = '';
-  resultsPre.textContent = '';
+  resultsTable.innerHTML = '';
   goButton.disabled = true;
 
   for (let i = 0; i < count; i++) {
@@ -91,6 +91,12 @@ function getCombinations(arr, k) {
 goButton.addEventListener('click', () => {
   const numbers = Array.from(selectsContainer.querySelectorAll('select'))
     .map(s => parseInt(s.value, 10));
-  const combos = getCombinations(numbers, 7);
-  resultsPre.textContent = combos.map(c => c.join(', ')).join('\n');
+  const size = parseInt(comboSizeSelect.value, 10);
+  const combos = getCombinations(numbers, size);
+  let html = '<tbody>';
+  combos.forEach(c => {
+    html += '<tr>' + c.map(n => `<td>${n}</td>`).join('') + '</tr>';
+  });
+  html += '</tbody>';
+  resultsTable.innerHTML = html;
 });
